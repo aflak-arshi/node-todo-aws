@@ -8,6 +8,10 @@ const todos = (database) => {
 
     router.get('/', todoController.getTodos);
 
+    router.get('/demo', (req, res) => {
+        res.send("hello world")
+    });
+    
     // router.delete('/:id');
 
     return router;
