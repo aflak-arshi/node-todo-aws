@@ -14,6 +14,10 @@ const createExpressApp = (database) => {
   app.use(bodyParser.json());
   app.use(methodOverride("X-HTTP-Method-Override")); // override with the X-HTTP-Method-Override header in the request
 
+  app.get('/test', function(req,res) {
+    res.send("Hello World");
+  });
+  
   app.use('/todos', todos(database));
   
 //   app.use("*", (req, res) => {
